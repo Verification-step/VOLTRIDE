@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Browse catalogue and add a bike to the basket",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "storefront navigation",
+      "product catalogue search and category filters",
+      "product detail view",
+      "add to basket",
+      "basket quantity and subtotal"
+    ],
+    "description": "Verifies the customer can find a bike, open its detail page, add it to the basket and see the updated basket.",
+    "steps": [
+      "Open Shop from the storefront navigation",
+      "Open a product card and add the bike to the basket",
+      "Open the basket and increase the quantity"
+    ],
+    "expected": "The selected product appears in the basket with the updated quantity and recalculated subtotal."
+  },
+  {
+    "name": "Complete a demo checkout and view the order in admin",
+    "viewport": "desktop",
+    "covers": [
+      "checkout required-field validation",
+      "delivery information form",
+      "payment method selection",
+      "local demo order creation",
+      "admin order management"
+    ],
+    "description": "Verifies the checkout blocks missing information and stores a clearly labelled local demo order visible in the admin workspace.",
+    "steps": [
+      "Add a product to the basket and proceed to checkout",
+      "Attempt to continue with required customer fields empty",
+      "Complete the customer and delivery details, choose a payment option and place the demo order",
+      "Open Admin preview and select Orders"
+    ],
+    "expected": "Required fields are validated; after completion, a demo order appears in the admin order list and no real payment is claimed."
+  },
+  {
+    "name": "Create and edit a catalogue item in admin on mobile",
+    "viewport": "mobile",
+    "covers": [
+      "responsive mobile admin navigation",
+      "admin product creation",
+      "product edit",
+      "local browser persistence",
+      "product deletion"
+    ],
+    "description": "Verifies the mobile admin workspace supports adding, editing and deleting a locally stored prototype product.",
+    "steps": [
+      "Open Admin preview and select Products",
+      "Add a product with a name, manufacturer and valid price",
+      "Edit the new product and save it",
+      "Refresh the page and verify the edited product remains",
+      "Delete the product"
+    ],
+    "expected": "The edited product persists after refresh and is removed after the delete action."
+  },
+  {
+    "name": "Submit a demo crypto payment reference without claiming verification",
+    "viewport": "mobile",
+    "covers": [
+      "crypto demo payment disclosure",
+      "transaction reference validation",
+      "payment evidence submission state",
+      "admin crypto review"
+    ],
+    "description": "Verifies the crypto flow requires a demo reference and never represents it as a verified blockchain payment.",
+    "steps": [
+      "Add a product and complete checkout using Cryptocurrency",
+      "Enter the required customer and delivery details",
+      "Place the demo order and attempt to submit an empty transaction reference",
+      "Enter a sample reference and submit it",
+      "Open Admin preview and select Crypto review"
+    ],
+    "expected": "The empty reference is rejected; a sample reference is labelled evidence submitted in demo state, with a clear notice that no blockchain payment was verified."
+  }
+]
